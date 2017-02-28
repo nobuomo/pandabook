@@ -50,3 +50,5 @@ gem 'execjs'
 gem 'bootstrap-sass'
 
 gem 'jquery-turbolinks'
+
+gem 'devise'
