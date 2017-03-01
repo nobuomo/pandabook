@@ -17,3 +17,12 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+header etc
+//= require jquery
+//= require jquery.turbolinks
+//= require jquery_ujs
+//= require bootstrap
+//= require turbolinks
+//= require masonry/jquery.masonry
+//= require_tree .
