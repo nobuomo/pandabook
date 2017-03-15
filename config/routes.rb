@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
 
+
+  root 'top#index'
+  resources :users, only: [:index]
+  resources :relationships, only: [:create, :destroy]
+
+  resources :users, only: [:index]
+
   get 'relationships/create'
 
   get 'relationships/destroy'
 
- root 'top#index'
-  resources :users, only: [:index]
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
@@ -27,9 +32,6 @@ Rails.application.routes.draw do
       end
   end
 
-  resources :users, only: [:index]
-
-  resources :relationships, only: [:create, :destroy]
 
   if Rails.env.development?
   mount LetterOpenerWeb::Engine, at: "/letter_opener"
