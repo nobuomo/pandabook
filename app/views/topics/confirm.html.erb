@@ -4,15 +4,10 @@
 
   <%= f.hidden_field :title %>
   <%= f.hidden_field :content %>
+  <%= f.hidden_field :image_cache, class: 'form-control'  %>
 
   <p>タイトル:<%= @topic.title %></p>
   <p>本文:<%= @topic.content %></p>
+  <p>イメージ:<%= @topic.image %></p>
   <%= f.submit "登録する" %>
-<% end %>
-
-<%= form_for(@topic, url: new_topic_path, method: 'get') do |f| %>
-  <%= f.hidden_field :title %>
-  <%= f.hidden_field :content %>
-  <%= f.submit "もどる", name: 'back' %>
-
 <% end %>

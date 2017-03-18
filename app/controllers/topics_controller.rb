@@ -45,7 +45,7 @@ end
       redirect_to topics_path, notice: "編集しました！"
  end
 
-  def destroy
+def destroy
         @topic.destroy
         redirect_to topics_path, notice: "削除しました！"
   end
