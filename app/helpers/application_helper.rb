@@ -1,19 +1,19 @@
 module ApplicationHelper
-def profile_img(user)
-  return image_tag(user.avatar, alt: user.name) if user.avatar?
+      def profile_img(user)
+        return image_tag(user.avatar, alt: user.name) if user.avatar?
 
-  unless user.provider.blank?
-      img_url = user.image_url
-  else
-      img_url = 'no_image.png'
-  end
-    image_tag(img_url, alt: user.name)
-  end
+        unless user.provider.blank?
+            img_url = user.image_url
+        else
+            img_url = 'no_image.png'
+        end
+          image_tag(img_url, alt: user.name)
+      end
 
-  def image_img(topic)
-      return image_tag(topic.image, alt: topic.title) if topic.image?
-  end
-end
+      def image_img(topic)
+          return image_tag(topic.image, alt: topic.title) if topic.image?
+      end
+    end
 
 
 module ActionView
