@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
 
   has_many :followed_users, through: :relationships, source: :followed
   has_many :followers, through: :reverse_relationships, source: :follower
-  end
+
 
 
   def self.create_unique_string
@@ -43,6 +43,7 @@ class User < ActiveRecord::Base
 
 
     def self.find_for_twitter_oauth(auth, signed_in_resource = nil)
+
       user = User.find_by(provider: auth.provider, uid: auth.uid)
 
       unless user
@@ -87,3 +88,4 @@ class User < ActiveRecord::Base
   def unfollow!(other_user)
     relationships.find_by(followed_id: other_user.id).destroy
   end
+end

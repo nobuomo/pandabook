@@ -25,7 +25,10 @@ Rails.application.routes.draw do
   end
 
   resources :topics do
-    resources :comments
+    resources :comments  
+      collection do
+      post :confirm
+    end
   end
 
 
