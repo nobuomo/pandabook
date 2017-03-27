@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_topic, only: [:show, :edit, :update, :destroy, :confirm]
+  before_action :set_topic, only: [:show, :edit, :update, :destroy]
 
   def index
      @topics=Topic.all
@@ -52,7 +52,7 @@ class TopicsController < ApplicationController
 
  private
     def topics_params
-      params.require(:topic).permit(:title, :content, :image, :user_id)
+      params.require(:topic).permit(:title, :content, :image)
     end
 
     def set_topic
