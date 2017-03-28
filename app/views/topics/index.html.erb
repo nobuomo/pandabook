@@ -15,8 +15,10 @@
 
   <p>本文:<%= topic.content %></p>
 
+  <p><%= image_tag topic.image, class: "img-responsive" %></p>
+
   <%= link_to "編集する", edit_topic_path(topic.id) %>
   <%= link_to "削除する", topic_path(topic.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %>
  <% end %>
-
+<br>
 <%= link_to "作成する", new_topic_path %>

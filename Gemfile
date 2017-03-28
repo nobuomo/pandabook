@@ -77,3 +77,7 @@ gem 'omniauth-facebook'
 
 gem 'carrierwave'
 gem 'rmagick'
+
+gem 'font-awesome-less'
+
+gem 'therubyracer'

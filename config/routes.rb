@@ -1,14 +1,8 @@
 Rails.application.routes.draw do
 
-
   root 'top#index'
   resources :users, only: [:index]
   resources :relationships, only: [:create, :destroy]
-
-  get 'relationships/create'
-
-  get 'relationships/destroy'
-
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
@@ -24,8 +18,12 @@ Rails.application.routes.draw do
       end
   end
 
+  resources :conversations do
+    resources :messages
+  end
+
   resources :topics do
-    resources :comments  
+    resources :comments
       collection do
       post :confirm
     end
