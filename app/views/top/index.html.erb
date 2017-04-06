@@ -16,28 +16,24 @@
                                 <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
                                     class="icon-bar"></span><span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="./ORqmj" style="margin-right:-8px; margin-top:-5px;">
-
-                            </a>
-                            <a class="navbar-brand" href="./ORqmj">  /a>
-                            <i class="brand_network"><small><small>diaspora* Network</small></small></i>
                         </div>
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li><%= link_to "TOPIC", topics_path %></li>
-                                
+                                <li><%= link_to "メッセージ", conversations_path %></li>
                                 <li><%= link_to 'ユーザー一覧', users_path if user_signed_in? %></li>
-
-
-
-                                <li><span class="badge badge-important">2</span><a href="#"><i class="fa fa-bell-o fa-lg" aria-hidden="true"></i></a></li>
-                                <li>
+                                <% if user_signed_in? %>
+                                <li><%= link_to 'マイページ', edit_user_registration_path %></li>
+                                <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+                                <% else %>
+                                <li><%= link_to 'ログイン', new_user_session_path %></li>
+                                <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+                                <% end %>
                                 <i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></li>
+                                <div align='right'> Pandabook </div>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                    <span class="user-name">
 
-                                    </span>
                                     <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li>
@@ -91,17 +87,26 @@
                         </div>
                         <div class="media-body">
                             <hr>
-                            <h3><strong>Bio</strong></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel gravida metus, non ultrices sapien. Morbi odio metus, dapibus non nibh id amet.</p>
+
+                            <h3><strong>
+                              <span class="user-name">
+                                <b>
+                                  <p><%= current_user.name %></p>
+                                </b>
+                                <p align="center">
+                                  <%= profile_img(current_user) %>
+                                </p>
+                              </span>
+                            </strong></h3>
+
                             <hr>
-                            <h3><strong>Location</strong></h3>
-                            <p>Earth</p>
+                            <h3><strong>User</strong></h3>
+
+                                  </div>
+                            </div>
+
                             <hr>
-                            <h3><strong>Gender</strong></h3>
-                            <p>Unknown</p>
-                            <hr>
-                            <h3><strong>Birthday</strong></h3>
-                            <p>January 01 1901</p>
+
                         </div>
                     </div>
                 </div>
@@ -112,7 +117,25 @@
                 <div class="panel-body">
                     <span>
                         <h1 class="panel-title pull-left" style="font-size:30px;">  <i class="fa fa-check text-success" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="John Doe is sharing with you"></i></h1>
-                        <div class="dropdown pull-right">
+
+                          <%= link_to "トピックを作成する", new_topic_path, class: 'btn btn-default' %>
+                          <% @topics.each do |topic| %>
+                            <div class="row">
+
+                          <%= link_to topic_path(topic) do %>
+                            <h4><strong><%= topic.title %></strong></h4>
+                          <% end %>
+
+                          <p><%= topic.content %></p>
+
+                          <p><%= image_tag topic.image, class: "img-responsive" %></p>
+
+                          
+
+                          <%= link_to "編集する", edit_topic_path(topic.id) %>
+                          <%= link_to "削除する", topic_path(topic.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %>
+                          <hr>
+                         <% end %>
                             <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 Friends
                                 <span class="caret"></span>
