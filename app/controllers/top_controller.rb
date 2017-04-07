@@ -9,6 +9,7 @@ class TopController < ApplicationController
   def index
      @topics=Topic.all
      @users = User.all
+     @conversations = Conversation.all
      @messages = @conversation.messages
         if @messages.length > 10
           @over_ten = true
@@ -67,12 +68,22 @@ class TopController < ApplicationController
             format.json { render json: @comment.errors, status: :unprocessable_entity }
           end
        end
+     end
 
       @message = @conversation.messages.build(message_params)
       if @message.save
       redirect_to conversation_messages_path(@conversation)
       end
-   end
+
+      if Conversation.between(params[:sender_id], params[:recipient_id]).present?
+        @conversation = Conversation.between(params[:sender_id], params[:recipient_id]).first
+      else
+        @conversation = Conversation.create!(conversation_params)
+      end
+
+      redirect_to conversation_messages_path(@conversation)
+      end
+
 
    def edit
    end
@@ -109,5 +120,8 @@ class TopController < ApplicationController
     def message_params
       params.require(:message).permit(:body, :user_id)
     end
+
+    def conversation_params
+      params.permit(:sender_id, :recipient_id)
+    end
  end
-end
