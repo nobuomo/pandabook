@@ -14,7 +14,7 @@
   </div>
   <br>
   <div class="field">
-  <%= f.label :写真のアップロード %><br>
+  <h2><strong><%= f.label :写真のアップロード %></strong></h2><br>
   <%= image_img(@topic)   %>
   </div>
   <div class="button_wrapper">
@@ -27,6 +27,8 @@
 
   <%= f.submit %>
 
+<div class="field">
 <%= link_to "一覧画面にもどる", topics_path %>
+</div>
 
   <% end %>

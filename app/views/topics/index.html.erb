@@ -4,14 +4,15 @@
     <p><%= notice %></p>
 
     <h1>トピック一覧</h1>
-
+  <%= link_to "Pandabok", root_path, class: 'btn btn-default' %><br>
   <%= link_to "トピックを作成する", new_topic_path, class: 'btn btn-default' %>
   <% @topics.each do |topic| %>
     <div class="row">
 
     <%= link_to topic_path(topic) do %>
     <h4><strong><%= topic.title %></strong></h4>
-  <% end %>
+    <p><%= topic.updated_at %></p>
+    <% end %>
 
   <p>本文:<%= topic.content %></p>
 
@@ -19,5 +20,8 @@
 
   <%= link_to "編集する", edit_topic_path(topic.id) %>
   <%= link_to "削除する", topic_path(topic.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %>
+
+  <hr>
+
  <% end %>
 <br>
