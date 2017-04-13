@@ -11,12 +11,6 @@
             <div class="container-fluid">
                 <div class="navbar navbar-default navbar-static-top" role="navigation">
                     <div class="container-fluid">
-                        <div class="navbar-header">
-                            <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
-                                    class="icon-bar"></span><span class="icon-bar"></span>
-                            </button> -->
-                        </div>
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                               <font color="white">
@@ -32,49 +26,6 @@
                                 <li><%= link_to 'ログイン', new_user_session_path %></li>
                                 <li><%= link_to 'サインアップ', new_user_registration_path %></li>
                                 <% end %>
-
-                                <!-- <body text = "ff9999">
-                                <h3><strong>User</strong></h3> -->
-                            </ul>
-
-                            <ul class="nav navbar-nav navbar-left">
-
-                                    <b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <div class="navbar-content">
-                                                <div class="row">
-                                                    <!-- <div class="col-md-5">
-                                                        <img src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" alt="Alternate Text" class="img-responsive" width="120px" height="120px" />
-                                                        <p class="text-center small">
-                                                            <a href="./3X6zm">Change Photo</a></p>
-                                                    </div> -->
-                                                    <div class="col-md-7">
-
-                                                        <div class="divider">
-                                                        </div>
-                                                        <!-- <a href="./56ExR" class="btn btn-default btn-xs"><i class="fa fa-user-o" aria-hidden="true"></i> Profile</a>
-                                                        <a href="#" class="btn btn-default btn-xs"><i class="fa fa-address-card-o" aria-hidden="true"></i> Contacts</a>
-                                                        <a href="#" class="btn btn-default btn-xs"><i class="fa fa-cogs" aria-hidden="true"></i> Settings</a>
-                                                        <a href="#" class="btn btn-default btn-xs"><i class="fa fa-question-circle-o" aria-hidden="true"></i> Help!</a>
-                                                    </div> -->
-                                                </div>
-                                            </div>
-                                            <!-- <div class="navbar-footer">
-                                                <div class="navbar-footer-content">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <a href="#" class="btn btn-default btn-sm"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Change Passowrd</a>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <a href="#" class="btn btn-default btn-sm pull-right"><i class="fa fa-power-off" aria-hidden="true"></i> Sign Out</a>
-                                                        </div> -->
-                                                    </div>
-                                                </div>
-                                            </div> -->
-                                        </li>
-                                    </ul>
-                                </li>
                             </ul>
                         </div>
                     </div>
@@ -83,40 +34,20 @@
         </div>
 
         <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <span>
-                        <!-- <h1 class="panel-title pull-right" style="font-size:30px;">  <i class="fa fa-check text-success" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="John Doe is sharing with you"></i></h1> -->
-
+            <div class="panel-body">
                           <%= link_to "トピックを作成する", new_topic_path, class: 'btn btn-default' %>
-                          <hr>
-                        </div>
-                    </span>
-                    <!-- <br><br>
-                    <i class="fa fa-tags" aria-hidden="true"></i> <a href="/tags/diaspora" class="tag">#diaspora</a> <a href="/tags/hashtag" class="tag">#hashtag</a> <a href="/tags/caturday" class="tag">#caturday</a>
-                    <br><br><hr>
-                    <span class="pull-left">
-                        <a href="#" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-fw fa-files-o" aria-hidden="true"></i> Posts</a>
-                        <a href="#" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-fw fa-picture-o" aria-hidden="true"></i> Photos <span class="badge">42</span></a>
-                        <a href="#" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-fw fa-users" aria-hidden="true"></i> Contacts <span class="badge">42</span></a>
-                    </span>
-                    <span class="pull-right">
-                        <a href="#" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-lg fa-at" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Mention"></i></a>
-                        <a href="#" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-lg fa-envelope-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Message"></i></a>
-                        <a href="#" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-lg fa-ban" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Ignore"></i></a>
-                    </span> -->
-                </div>
             </div>
-            <hr>
+        </div>
+
+        <hr>
             <!-- Simple post content example. -->
+
+
             <div class="panel panel-default">
                 <div class="panel-body">
                     <!-- <div class="pull-left"> -->
-
-
-   <div id="side">
-                      <div style="padding-top:50px;"> </div>
-                        <div style="padding-left:auto;"> </div>
+                      <div style="padding-top:50px;"> </div>
+                        <div style="padding-left:auto;"> </div>
                       <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
                           <div class="panel panel-default">
                               <div class="panel-body">
@@ -124,20 +55,15 @@
                                       <div class="media-body">
                                         <h3><strong>Welcome</strong></h3>
                                           <h3><strong>
-                                            <span class="user-name">
-
-
-                                              <p>
+                                            <div class="user-name">
                                                 <%= profile_img(current_user) %>
                                                 <h4><<%= link_to "メッセージ", conversations_path %> ><strong><p><%= current_user.name %></p></strong></a></h4>
-                                              </p>
-                                            </span>
+                                            </div>
                                           </strong></h3>
 
                                           <hr>
                                           <h3><strong>User List</strong></h3>
                                           <table>
-
                                                <% @users.each do |user| %>
                                                 <div class="container-child col-md-2 col-sm-4 col-xs-6 ">
                                                   <tr>
@@ -151,7 +77,6 @@
                                                 </tr>
                                                 </div>
                                                 <% end %>
-
                                             </table>
 
                                                 </div>
@@ -166,17 +91,15 @@
                       </div>
 
                     <hr>
-</div>
             <!-- Reshare Example -->
 <div id="main">
 
             <div class="panel-body">
-                <span>
+                <div>
                     <h1 class="panel-title pull-right" style="font-size:30px;">  </h1>
-
                       <%= link_to "トピックを作成する", new_topic_path, class: 'btn btn-default' %>
                       <hr>
-                  </span>
+                  </div>
             </div>
             <hr>
 
@@ -198,29 +121,20 @@
                     <% end %>
 
                     <p><%= topic.content %></p>
-                    <%= link_to "編集する", edit_topic_path(topic.id) %>
-                    <%= link_to "削除する", topic_path(topic.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %>
 
-                    <hr>
-
-                    <span>
                         <div class="navbar-right">
                             <div class="dropdown">
                                 <button class="btn btn-link btn-xs dropdown-toggle" type="button" id="dd1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                     <i class="fa fa-cog" aria-hidden="true"></i>
-                                    <span class="caret"></span>
                                 </button>
-                                <ul class="dropdown-menu" aria-labelledby="dd1" style="float: right;">
-                                    <li><a href="#"><i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i> Report</a></li>
-                                    <li><a href="#"><i class="fa fa-fw fa-ban" aria-hidden="true"></i> Ignore</a></li>
-                                    <li><a href="#"><i class="fa fa-fw fa-bell" aria-hidden="true"></i> Enable notifications for this post</a></li>
-                                    <li><a href="#"><i class="fa fa-fw fa-eye-slash" aria-hidden="true"></i> Hide</a></li>
+                                <ul class="dropdown-menu" aria-labelledby="dd1" style="float: center;">
+                                    <li><%= link_to "編集する", edit_topic_path(topic.id) %>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#"><i class="fa fa-fw fa-trash" aria-hidden="true"></i> Delete</a></li>
+                                    <li> <%= link_to "削除する", topic_path(topic.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %><i class="fa fa-fw fa-trash" aria-hidden="true"></i> Delete</a></li>
                                 </ul>
+                                <hr>
                             </div>
                         </div>
-                    </span>
                     <hr>
     <% end %>
     <hr>

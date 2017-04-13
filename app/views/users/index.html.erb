@@ -1,24 +1,22 @@
 <%= javascript_include_tag "application" %>
 
 <div class="container">
-<h2>ユーザー</h2>
+<h2>ユーザー一覧</h2>
   <% @users.each do |user| %>
         <div class="container-child col-md-2 col-sm-4 col-xs-6 ">
           <%= profile_img(user) %>
-          <%= user.name %>  
+          <%= user.name %>
           <%= user.email %>
-          <%= render 'follow_form', user: user %>
+
         </div>
-    <%= link_to 'Delete', users_path(user), :method => :delete, :confirm => 'Are you sure?' %>
-  </div>
+    　<% if user.id != current_user.id %>
+        <div class="item">
+          <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
+        </div>
+        <%= render partial: 'follow_form', locals: { user: user } if signed_in?   %>
+        <% end %>
 
-  <% if user.id != current_user.id %>
-    <li>
-      <div class="item">
+    </div>
 
-        <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
-      </div>
-      <%= render partial: 'follow_form', locals: { user: user } if signed_in?   %>
-    </li>
-  <% end %>
+  <hr>
 <% end %>

@@ -1,9 +1,9 @@
 .img-responsive{
     display: block;
-    max-width: 100%;
-    max-height: 100%;
-    min-width: 100%;
-    min-height: 100%;
+    max-width: 25%;
+    max-height: 25%;
+    min-width: 25%;
+    min-height: 25%;
   }
 
 
@@ -15,7 +15,7 @@
   =require twitter-bootstrap-static/fontawesome
   */
   body {
-    background-color: #1abc9c;
+    background-color: #d6ed7e;
     font: 1em Helvetica;
   }
 
@@ -90,8 +90,6 @@
     background-color: white;
     padding: 2px 5px;
     color: rgba(0,0,0,.6);
-    border-radius: 2px;
-    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
     margin: 5px;
   }
 
