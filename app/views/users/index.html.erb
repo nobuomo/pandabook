@@ -1,7 +1,10 @@
 <%= javascript_include_tag "application" %>
 
 <div class="container">
-<h2>ユーザー一覧</h2>
+  <h2><strong><%= link_to "PANDABOOK", root_path %> ユーザー一覧</strong></h2＞
+  <br>
+  <hr>
+
   <% @users.each do |user| %>
         <div class="container-child col-md-2 col-sm-4 col-xs-6 ">
           <%= profile_img(user) %>

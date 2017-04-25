@@ -81,3 +81,5 @@ gem 'rmagick'
 gem 'font-awesome-less'
 
 gem 'therubyracer'
+
+gem 'fog'

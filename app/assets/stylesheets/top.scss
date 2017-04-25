@@ -81,7 +81,7 @@ overflow: hidden;
 .side {
     width: 200px;
     height: 300px;
-    float: right;
+    float: left;
     background-color: #fff;
 }
 
@@ -91,15 +91,34 @@ overflow: hidden;
     padding-top: 15px;
     padding-right: 15px;
     padding-bottom: 15px;
-    padding-left: 15px;
-    float: center;
+    padding-left: 0px;
+    float: left;
     background-color: #fff;
 }
 
 
 .media-body{
     width: 540px;
-
-    float: center;
     background-color: #fff;
+}
+
+
+.header {
+  width: 100%;
+}
+
+.wrapper{
+    width: 970px;
+    margin: 30px auto 40px;
+}
+
+.main{
+  display: block;
+  float: center;
+  width: 660px;
+}
+
+.sidemenu{
+  float: left;
+  width: 200px;
 }

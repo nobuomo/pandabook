@@ -1,12 +1,14 @@
+
  <%= form_for(resource, as: resource_name, url: user_registration_path) do |f| %>
 <%= f.error_messages! %>
 <div id='container'>
   <div class='signup'>
+    　<h4><strong><%= link_to "PANDABOOK", root_path %> サインアップ</strong></h4>
       <input type='text' <%= f.text_field :name, class: "form-control", placeholder: "名前:" %>
       <input type='text' <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "メールアドレス:" %>
       <input type='text' <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "パスワード:" %>
       <input type='text' <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "パスワード（確認）" %>
-       <input type='submit' placeholder='SUBMIT' />
+       <input type='submit' placeholder='SUBMIT' >
        <% end %>
   </div>
 </div>
