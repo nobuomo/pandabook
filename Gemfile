@@ -6,14 +6,13 @@ gem 'rails', '4.2.3'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
-#gem 'sass-rails'
+gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
+gem 'therubyracer', platforms: :ruby
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -22,7 +21,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
+gem 'jquery-turbolinks'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -44,13 +43,6 @@ group :development, :test do
 end
 
 gem 'twitter-bootstrap-rails'
-
-gem 'execjs'
-
-gem 'bootstrap-sass'
-
-gem 'jquery-turbolinks'
-
 gem 'devise'
 
 gem 'faker'
@@ -77,9 +69,6 @@ gem 'omniauth-facebook'
 gem 'carrierwave'
 gem 'rmagick'
 
-gem 'font-awesome-less'
-
-gem 'therubyracer'
 
 gem 'fog'
 
@@ -93,5 +82,3 @@ group :development, :test do
   gem 'capistrano-rbenv'
   gem 'capistrano3-unicorn'
 end
-
-gem 'sass-rails', '5.0.6'

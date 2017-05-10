@@ -42,8 +42,6 @@ GEM
     airbrussh (1.2.0)
       sshkit (>= 1.6.1, != 1.7.0)
     arel (6.0.4)
-    autoprefixer-rails (6.7.7.2)
-      execjs
     bcrypt (3.1.11)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -51,9 +49,6 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.3.7)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
     builder (3.2.3)
     byebug (9.0.6)
     cancan (1.6.10)
@@ -245,8 +240,6 @@ GEM
     fog-xml (0.1.3)
       fog-core
       nokogiri (>= 1.5.11, < 2.0.0)
-    font-awesome-less (4.7.0)
-      less (>= 2.4.0)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
     formatador (0.2.5)
@@ -462,7 +455,6 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors
-  bootstrap-sass
   byebug
   cancan
   capistrano (= 3.6.0)
@@ -474,10 +466,8 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   dotenv-rails
-  execjs
   faker
   fog
-  font-awesome-less
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
@@ -491,7 +481,7 @@ DEPENDENCIES
   rails_12factor
   rails_admin
   rmagick
-  sass-rails (= 5.0.6)
+  sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
   therubyracer
@@ -502,4 +492,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.13.6
+   1.14.3
