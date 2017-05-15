@@ -35,9 +35,9 @@ class TopicsController < ApplicationController
    def edit
    end
 
-   def confirm
-     @topic = Topic.new(topics_params)
-     render :new if @topic.invalid?
+  def confirm
+    @topic = Topic.new(topics_params)
+    render :new if @topic.invalid?
    end
 
    def update
