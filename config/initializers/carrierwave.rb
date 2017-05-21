@@ -35,8 +35,21 @@ CarrierWave.configure do |config|
         region:                'ap-northeast-1',
         path_style:            true,
     }
+  config.fog_directory     =  ENV['panbook_production']                             # required
+  #config.fog_public     = false                                   # optional, defaults to true
+  #config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
+  #config.storage = :fog
+  config.fog_authenticated_url_expiration = 60
+  config.fog_public     = true
+  config.fog_attributes = {'Cache-Control' => 'public, max-age=86400'}
+  config.cache_storage = :fog
 
-  config.fog_directory  = 'directory'                             # required
-  config.fog_public     = false                                   # optional, defaults to true
-  config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
+   case Rails.env
+       when 'production'
+         config.fog_directory = 'panbook_production'
+         config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/panbook_production'
+       when 'development'
+         config.fog_directory = 'panbook_development'
+         config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/panbook_development'
+       end
 end
