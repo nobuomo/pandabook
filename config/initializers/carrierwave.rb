@@ -46,10 +46,10 @@ CarrierWave.configure do |config|
 
    case Rails.env
        when 'production'
-         config.fog_directory = 'panbook_production'
-         config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/panbook_production'
+         config.fog_directory = 'panbook-production'
+         config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/panbook-production'
        when 'development'
-         config.fog_directory = 'panbook_development'
-         config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/panbook_development'
+         config.fog_directory = 'panbook-development'
+         config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/panbook-development'
        end
 end
