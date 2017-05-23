@@ -11,7 +11,8 @@ CarrierWave.configure do |config|
         region:                'ap-northeast-1',
         path_style:            true,
     }
-  config.fog_directory     =  ENV['panbook-production']                             # required
+   #config.fog_directory     =  ENV['panbook-production'] 
+   config.fog_directory  = 'directory'                                # required
   #config.fog_public     = false                                   # optional, defaults to true
   #config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
   #config.storage = :fog
