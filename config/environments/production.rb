@@ -1,6 +1,6 @@
 Rails.application.configure do
 
-config.action_mailer.default_url_options = { host: 'https://cryptic-plateau-93541.herokuapp.com/' }
+config.action_mailer.default_url_options = { host: '52.199.67.86' }
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings =
 {
