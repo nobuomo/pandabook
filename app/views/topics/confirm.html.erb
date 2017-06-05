@@ -2,6 +2,32 @@
 
 <%= form_for(@topic) do |f| %>
 
+<%= f.label :title %>
+<%= f.text_field :title, class: 'form-control' %>
+<br>
+<%= f.label :content %>
+<%= f.text_field :content, class: 'form-control' %>
+<br>
+<div class="field">
+<%= f.label :作成日 %><br>
+<%= f.datetime_select :created_at, class: 'form-control'  %>
+</div>
+<br>
+<div class="field">
+<h2><strong><%= f.label :写真のアップロード %></strong></h2><br>
+<%= image_img(@topic) %>
+</div>
+
+<br>
+<br>
+
+<%= f.submit %>
+
+<div class="field">
+<%= link_to "一覧画面にもどる", topics_path %>
+</div>
+
+<!--
   <%= f.hidden_field :title %>
   <%= f.hidden_field :content %>
   <%= f.hidden_field :image_cache, class: 'form-control'  %>
@@ -17,5 +43,5 @@
   <%= f.hidden_field :title %>
   <%= f.hidden_field :content %>
   <%= f.hidden_field :image_cache %>
-  <%= f.submit "もどる", name: 'back' %>
+  <%= f.submit "もどる", name: 'back' %> -->
 <% end %>
