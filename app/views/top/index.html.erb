@@ -36,6 +36,10 @@
                                 <li><%= link_to 'ログイン', new_user_session_path %></li>
                                 <li><%= link_to 'サインアップ', new_user_registration_path %></li>
                                 <% end %>
+                                <!-- <div class="panel-body">  -->
+                                <%= link_to "トピックを投稿する", new_topic_path, class: 'btn btn-default' %>
+                                <!-- </div> -->
+
                             </ul>
                         </div>
                     </div>
@@ -45,12 +49,12 @@
     </header>
 
     <div class="wrapper">
-      <main class="sidemenu">
-        <!-- <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-            <div class="panel-body"> -->
-                          <!-- <%= link_to "トピックを投稿する", new_topic_path, class: 'btn btn-default' %> -->
-            <!-- </div>
-        </div> -->
+        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+            <!-- <div class="panel-body"> -
+            <%= link_to "トピックを投稿する", new_topic_path, class: 'btn btn-default' %> -
+             </div>
+             -->
+
 
         <hr>
             <!-- Simple post content example. -->
