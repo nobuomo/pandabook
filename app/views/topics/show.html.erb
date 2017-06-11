@@ -5,6 +5,7 @@
 
     <div class="topic-text">
       <p class="left"><%= @topic.title %></p>
+      <%= @topic.created_at.strftime("%y/%m/%d %p %l:%M") %>
       <br> <h2>コメント一覧 </h2>
     </div>
 
@@ -15,5 +16,4 @@
     <% if current_user.id == @topic.user_id %>
       <%= link_to '編集', edit_topic_path(@topic) %> |
     <% end %>
-
 </div>
