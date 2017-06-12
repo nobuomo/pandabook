@@ -1,11 +1,56 @@
 <!DOCTYPE html>
 <html>
+
+
 <head>
-  <title></title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <section class="main-header">
+    <p class="flash"><%= notice %><%= alert %></p>
+  </section>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://bootswatch.com/cosmo/bootstrap.min.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
+
+
+
+<header class ="header">
+<div class="mainbody container-fluid">
+  <div class="row">
+      <div class="navbar-wrapper">
+          <div class="container-fluid">
+              <div class="navbar navbar-default navbar-static-top" role="navigation">
+                  <div class="container-fluid">
+                      <div class="navbar-collapse collapse">
+                          <ul class="nav navbar-nav">
+                            <font color="white">
+                             <li><h4><strong><%= link_to "PANDABOOK", root_path %> </strong></h4></li>
+                             </font>
+                              <!-- <li><%= link_to "TOPIC", topics_path %></li> -->
+                              <!-- <li><%= link_to "メッセージ", conversations_path %></li> -->
+                              <li><%= link_to 'ユーザー一覧', users_path if user_signed_in? %></li>
+                              <% if user_signed_in? %>
+                              <li><%= link_to 'マイページ', edit_user_registration_path %></li>
+                              <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+                              <% else %>
+                              <li><%= link_to 'ログイン', new_user_session_path %></li>
+                              <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+                              <% end %>
+                              <!-- <div class="panel-body">  -->
+                              <%= link_to "トピックを投稿する", new_topic_path, class: 'btn btn-default' %>
+                              <!-- </div> -->
+
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </header>
+
 <body>
 
 <%= yield %>
