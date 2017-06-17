@@ -1,3 +1,4 @@
+
 class CommentsController < ApplicationController
   # コメントを保存、投稿するためのアクションです。
   def create

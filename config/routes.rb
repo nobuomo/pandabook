@@ -11,7 +11,6 @@ Rails.application.routes.draw do
       omniauth_callbacks: "users/omniauth_callbacks"
   }
 
-
   resources :topics, only: [:index, :new, :create, :edit, :show, :update, :destroy] do
     collection do
         post :confirm
@@ -27,7 +26,9 @@ Rails.application.routes.draw do
       post :confirm, on: :collection
   end
 
-
+  devise_scope :user do
+      get '/users/sign_out' => 'devise/sessions#destroy'
+    end
 
   if Rails.env.development?
   mount LetterOpenerWeb::Engine, at: "/letter_opener"

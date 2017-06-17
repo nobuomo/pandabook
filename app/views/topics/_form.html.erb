@@ -18,7 +18,7 @@
   <%= image_img(@topic) %>
   </div>
   <div class="button_wrapper">
-      <button class="button1">
+      <button class="button">
         <%= f.file_field :image %>
         <%= f.hidden_field :image_cache, class: 'form-control'  %></button>
     </div>
@@ -28,7 +28,7 @@
   <%= f.submit %>
 
 <div class="field">
-<%= link_to "一覧画面にもどる", topics_path %>
+<%= link_to "一覧画面にもどる", root_path %>
 </div>
 
   <% end %>

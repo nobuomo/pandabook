@@ -29,8 +29,8 @@ class TopicsController < ApplicationController
      @topic.user_id = current_user.id
 
      if @topic.save
-          redirect_to topics_path, notice: "作成しました！"
-          NoticeMailer.sendmail_topic(@topic).deliver
+          redirect_to root_path, notice: "作成しました！"
+          # NoticeMailer.sendmail_topic(@topic).deliver
         else
           render 'new'
         end
@@ -41,13 +41,16 @@ class TopicsController < ApplicationController
 
    def update
         @topic.update(topics_params)
-        redirect_to topics_path, notice: "編集しました！"
+        redirect_to root_path, notice: "編集しました！"
    end
 
    def destroy
-          @topic.destroy
-          redirect_to topics_path, notice: "削除しました！"
+      @topic = Topic.find(params[:id])
+      @topic.destroy
+      redirect_to root_path, notice: "削除しました！"
    end
+
+
 
  private
     def topics_params
