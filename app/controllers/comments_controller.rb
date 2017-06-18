@@ -1,28 +1,58 @@
 
 class CommentsController < ApplicationController
-  # コメントを保存、投稿するためのアクションです。
-  def create
-    # ログインユーザーに紐付けてインスタンス生成するためbuildメソッドを使用します。
-    @comment = current_user.comments.build(comment_params)
-    @topic = @comment.topic
 
-    # クライアント要求に応じてフォーマットを変更
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to topic_path(@topic), notice: 'コメントを投稿しました。' }
-        format.json { render :show, status: :created, location: @comment }
-       # JS形式でレスポンスを返します。
+  def create
+    @topic = Topic.find(params[:topic_id])
+    @comment = @topic.comments.build(comment_params)
+    @comment.user_id = current_user
+
+    if @comment.save
+      respond_to do |format|
         format.js { render :index }
-      else
-        format.html { render :new }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+      end
+    else
+      respond_to do |format|
+        format.js { render :form }
+      end
+    end
+  end
+
+  def edit
+    @topic = Topic.find(params[:topic_id])
+    @comment = Comment.find(params[:id])
+    respond_to do |format|
+      format.js { render :edit, locals: { topic: @topic } }
+    end
+  end
+
+  def update
+    @topic = Topic.find(params[:topic_id])
+    @comment = Comment.find(params[:id])
+    @comment.update(comment_params)
+    if @comment.save
+      respond_to do |format|
+        format.js { render :index }
+      end
+    else
+      respond_to do |format|
+        format.js { render :form }
+      end
+    end
+  end
+
+  def destroy
+    @topic = Topic.find(params[:topic_id])
+    @comment = Comment.find(params[:id])
+    if @comment.destroy
+      respond_to do |format|
+        format.js { render :index }
       end
     end
   end
 
   private
-    # ストロングパラメーター
+
     def comment_params
-      params.require(:comment).permit(:topic_id, :content)
+      params.require(:comment).permit(:content)
     end
 end
