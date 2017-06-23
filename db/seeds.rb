@@ -13,11 +13,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
-10.times do |n|
-  content = Faker::Coffee.notes
-  comment = "comment"
-  Comment.create!(contents: contents,
-               comment: comment,
-               )
-end
+# coding: utf-8
+  Comment.create(:content => 'コメントウ１')
+  Comment.create(:content => 'コメントウ２')

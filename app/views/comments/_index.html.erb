@@ -1,10 +1,12 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <ul>
+
   <% comments.each do |comment| %>
     <% unless comment.id.nil? %>
       <li>
         <p class="left"><%= comment.user.name %>さんがコメントしました。</p>
+
         <p class="left"><%= comment.content %></p>
         <% if current_user.id == comment.user.id %>
           <p class="left">
