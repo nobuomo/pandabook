@@ -8,25 +8,18 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-
         format.html { redirect_to topic_path(@topic), notice: 'コメントを投稿しました。' }
-
+        format.js { render :index }
       else
         format.html { render :new }
       end
     end
   end
 
-
-
-
-
   def edit
     @topic = Topic.find(params[:topic_id])
     @comment = Comment.find(params[:id])
-    respond_to do |format|
-      format.js { render :edit, locals: { topic: @topic } }
-    end
+
   end
 
   def update
@@ -35,11 +28,11 @@ class CommentsController < ApplicationController
     @comment.update(comment_params)
     if @comment.save
       respond_to do |format|
-        format.js { render :index }
+        format.html { redirect_to topic_path(@topic), notice: 'コメントを編集しました。' }
       end
     else
       respond_to do |format|
-        format.js { render :form }
+        format.js { render :index }
       end
     end
   end
@@ -54,11 +47,10 @@ class CommentsController < ApplicationController
     end
   end
 
-  private
+  def show
+  end
 
-    # def comment_params
-    #       params.require(:comment).permit(:comment_id, :topic_id, :user_id, :content)
-    # end
+  private
 
     def comment_params
           params.require(:comment).permit(:topic_id, :content)
