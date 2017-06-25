@@ -12,6 +12,7 @@
   </head>
 
 <body>
+  <p class="flash"><%= notice %></p>
 
     <div class="wrapper">
         <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
@@ -28,7 +29,7 @@
                                             <div class="user-name">
                                                 <%= profile_img(current_user) %>
                                                 <strong><p><%= current_user.name %>　<br>さん！</p></strong></a>
-                                              <h5> <<%= link_to "メッセージ", conversations_path %> ></h>
+                                              <h5> <<%= link_to "メッセージ", conversations_path %> ></h5>
                                             </div>
                                           </strong>
                                           <div class="pull-right">
