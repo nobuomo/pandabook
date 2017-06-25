@@ -29,8 +29,7 @@
                             <font color="white">
                              <li><h4><strong><%= link_to "PANDABOOK", root_path %> </strong></h4></li>
                              </font>
-                              <!-- <li><%= link_to "TOPIC", topics_path %></li> -->
-                              <!-- <li><%= link_to "メッセージ", conversations_path %></li> -->
+
                               <li><%= link_to 'ユーザー一覧', users_path if user_signed_in? %></li>
                               <% if user_signed_in? %>
                               <li><%= link_to 'マイページ', edit_user_registration_path %></li>
@@ -39,9 +38,9 @@
                               <li><%= link_to 'ログイン', new_user_session_path %></li>
                               <li><%= link_to 'サインアップ', new_user_registration_path %></li>
                               <% end %>
-                              <!-- <div class="panel-body">  -->
-                              <%= link_to "トピックを投稿する", new_topic_path, class: 'btn btn-default' %>
-                              <!-- </div> -->
+                            　<li><%= link_to 'メッセージ', conversations_path %></li>
+                              <li><%= link_to "トピックを投稿する", new_topic_path %></li>
+
 
                           </ul>
                       </div>

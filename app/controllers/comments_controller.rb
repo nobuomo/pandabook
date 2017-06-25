@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.html { redirect_to topic_path(@topic), notice: 'コメントを投稿しました。' }
-        format.js { render :index }
+
       else
         format.html { render :new }
       end
@@ -42,12 +42,14 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     if @comment.destroy
       respond_to do |format|
+        format.html { redirect_to topic_path(@topic), notice: 'コメントを削除しました。' }
+      end
+    else
+      respond_to do |format|
+
         format.js { render :index }
       end
     end
-  end
-
-  def show
   end
 
   private
