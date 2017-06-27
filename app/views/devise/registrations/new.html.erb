@@ -1,8 +1,8 @@
 
  <%= form_for(resource, as: resource_name, url: user_registration_path) do |f| %>
 <%= f.error_messages! %>
-<div id='container'>
-  <div class='signup'>
+<div id='container-fluid'>
+  <div class='panel-body'>
     　<h4><strong><%= link_to "PANDABOOK", root_path %> サインアップ</strong></h4>
       <input type='text' <%= f.text_field :name, class: "form-control", placeholder: "名前:" %>
       <input type='text' <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "メールアドレス:" %>
