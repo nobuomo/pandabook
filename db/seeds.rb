@@ -1,4 +1,4 @@
-# 3.times do |n|
+# 5.times do |n|
 #   email = Faker::Internet.email
 #   password = "password"
 #   User.create!(email: email,
@@ -6,13 +6,22 @@
 #                password_confirmation: password,
 #                )
 # end
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-# coding: utf-8
-  Comment.create(:content => 'コメントウ１')
-  Comment.create(:content => 'コメントウ２')
+
+User.seed(:id) do |s|
+  s.id = 1
+  s.name = "jon"
+  s.email = "ppp@com"
+  s.password = "password"
+  s.uid = "pamda"
+  s.provider ="yama"
+
+end
+
+User.seed(:id) do |s|
+  s.id = 2
+  s.name = "emily"
+  s.email = "qqq@com"
+  s.password = "password"
+  s.uid ="kame"
+  s.provider ="kawa"
+end

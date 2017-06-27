@@ -11,6 +11,9 @@ Rails.application.routes.draw do
       omniauth_callbacks: "users/omniauth_callbacks"
   }
 
+  resources :followed_users, only: [:index]
+  resources :followers, only: [:index]
+
   resources :topics, only: [:index, :new, :create, :edit, :show, :update, :destroy] do
     collection do
         post :confirm

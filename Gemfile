@@ -86,3 +86,5 @@ end
 gem 'mini_magick'
 
 gem 'faker'
+
+gem 'seed-fu', '~> 2.3'
