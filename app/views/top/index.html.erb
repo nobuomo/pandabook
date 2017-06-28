@@ -28,8 +28,12 @@
                                            <h3><strong>
                                             <div class="user-name">
                                           <%= profile_img(current_user) %>
+                                        </div>
+                                                <strong><p><%= current_user.name %>　<br>さん！</p></strong></a>
+                                            </div>
+                                          </strong>
  </div>
-                                         </strong>
+
                                          <div class="pull-right">
                                              <h1 class="panel-title pull-right" style="font-size:30px;">  </h1>
                                               <%= link_to "トピックを投稿する", new_topic_path, class: 'btn btn-default' %>
@@ -54,10 +58,11 @@
                     <div class="pull-left">
                       <a href="#">
                           <% @topics.each do |topic| %>
-                          <img class="media-object img-circle">   <%= profile_img(topic.user) %>
+
                       </a>
                   <h4><%= link_to conversations_path do %>
-                  <style="text-decoration:none;"><strong><p> <%= topic.user.name %></p></strong></a></h4>
+                    
+                  <style="text-decoration:none;"></a></h4>
                   <small><small> <% end %>
                   <style="text-decoration:none; color:grey;">
                   <i><i class="fa fa-clock-o" aria-hidden="true"></i><%= topic.updated_at %></i></a></small></small></h4>
