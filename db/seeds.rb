@@ -11,13 +11,13 @@ end
 10.times do |n|
   email = Faker::Internet.email
   password = "password"
-  avatar = "avatar"
-  uid ="uid"
-  provider = "pandabook"
+  image_url =  Faker::Avatar.image
+  uid ="uid123#{n}"
+  provider = "pandabook#{n}"
   User.create!(email: email,
                password: password,
                password_confirmation: password,
-               avatar: avatar,
+               image_url: image_url,
                uid: uid,
                provider: provider,
                )
