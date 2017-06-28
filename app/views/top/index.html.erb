@@ -23,125 +23,63 @@
                         <div style="padding-left:auto;">
                           <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
                                   <div class="media">
-                                      <div class="media-body">
-                                        <h3><strong>Welcome</strong></h3>
-                                          <h3><strong>
-                                            <div class="img-responsive">
-                                                <%= profile_img(current_user) %>
-                                              </div>
-                                                <strong><p><%= current_user.name %>　<br>さん！</p></strong></a>
-                                          </strong>
-                                          <div class="pull-right">
-                                              <h1 class="panel-title pull-right" style="font-size:30px;">  </h1>
-                                                <%= link_to "トピックを投稿する", new_topic_path, class: 'btn btn-default' %>
-                                          </div>
-                                      </div>
-                                   </div>
-                                </div>
+                                       <div class="media-body">
+                                         <h3><strong>Welcome</strong></h3>
+                                           <h3><strong>
+                                            <div class="user-name">
+                                          <%= profile_img(current_user) %>
+ </div>
+                                         </strong>
+                                         <div class="pull-right">
+                                             <h1 class="panel-title pull-right" style="font-size:30px;">  </h1>
+                                              <%= link_to "トピックを投稿する", new_topic_path, class: 'btn btn-default' %>
+                                        </div>
+                                    </div>
+                                 </div>
                               </div>
                             </div>
                           </div>
-                      </div>
-
-
-      <div class="main">
-
-
-            　</div>
-
-
-              <div class="panel panel-default">
-                  <div class="panel-body">
-                      <div class="pull-left">
-                        <a href="#">
-                            <% @topics.each do |topic| %>
-                            <img class="media-object img-circle">   <%= profile_img(topic.user) %>
-                        </a>
-                    <h4><%= link_to conversations_path do %>
-                    <style="text-decoration:none;"><strong><p> <%= topic.user.name %></p></strong></a></h4>
-                    <small><small> <% end %>
-                    <style="text-decoration:none; color:grey;">
-                    <i><i class="fa fa-clock-o" aria-hidden="true"></i><%= topic.updated_at %></i></a></small></small></h4>
-
-                    <p><%= image_tag topic.image, class: "img-responsive" %></p>
-                    <%= link_to topic_path(topic) do %>
-                    <h4><strong><%= topic.title %></strong></h4>
-                    <% end %>
-
-                    <p><%= topic.content %></p>
-<!--
-                        <div class="navbar-right">
-                            <div class="dropdown">
-                                <button class="btn btn-link btn-xs dropdown-toggle" type="button" id="dd1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                    <i class="fa fa-cog" aria-hidden="true"></i>
-                                </button>
-
-                                <ul class="dropdown-menu" aria-labelledby="dd1" style="float: center;"> -->
-                                 <% if topic.user == current_user %>
-                                  <div class="button_wrapper">
-                                    <button class='btn btn-dangar btn-xs'>
-                                    <%= link_to "編集する", edit_topic_path(topic.id) %>
-                                    </button>
-                                    <button class='btn btn-dangar btn-xs'>
-                                    <%= link_to "削除する", topic_path(topic.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %>
-                                    </button>
-                                  </div>
-                                  <% end %>
-                                <!-- </ul> -->
-                                <hr>
-                            <!-- </div>
-                        </div> -->
-                    <hr>
-                <% end %>
-                <hr>
-              </div>
-
-<!--
-                    <div class="post-content">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <div class="pull-left">
-                                    <a href="#">
-                                        <img class="media-object img-circle" src="https://diaspote.org/uploads/images/thumb_large_283df6397c4db3fe0344.png" width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
-                                    </a>
-                                </div>
-                                <h4><a href="#" style="text-decoration:none;"><strong>✪ SтeғOғғιcιel ✪ ツ</strong></a> – <small><small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i> about 15 hours ago</i></a></small></small></h4>
-                                <hr>
-                                <div class="post-content">
-                                    Reshare post example.
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel gravida metus, non ultrices sapien. Morbi odio metus, dapibus non nibh id amet.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel gravida metus, non ultrices sapien. Morbi odio metus, dapibus non nibh id amet.</p>
-                                </div>
-                            </div>
                         </div>
-                    </div> -->
-                    <hr>
-                    <!-- <div>
-                        <div class="pull-right btn-group-xs">
-                            <a class="btn btn-default btn-xs"><i class="fa fa-heart" aria-hidden="true"></i> Like</a>
-                            <a class="btn btn-default btn-xs"><i class="fa fa-retweet" aria-hidden="true"></i> Reshare</a>
-                            <a class="btn btn-default btn-xs"><i class="fa fa-comment" aria-hidden="true"></i> Comment</a>
-                        </div>
-                        <div class="pull-left">
-                            <p class="text-muted" style="margin-left:5px;"><i class="fa fa-globe" aria-hidden="true"></i> Public</p>
-                        </div>
-                        <br>
-                    </div> -->
-                    <!-- <hr>
-                    <div class="media">
-                        <div class="pull-left">
-                            <a href="#">
-                                <img class="media-object img-circle" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="35px" height="35px" style="margin-left:3px; margin-right:-5px;">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <textarea class="form-control" rows="1" placeholder="Comment"></textarea>
-                        </div>
-                    </div> -->
-                </div>
-            </div>
-            <!-- Sample post content with picture. -->
-      </main>
-    </div>
-  </body>
-</html>
+                    </div>
+
+
+    <div class="main">
+
+
+          　</div>
+
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="pull-left">
+                      <a href="#">
+                          <% @topics.each do |topic| %>
+                          <img class="media-object img-circle">   <%= profile_img(topic.user) %>
+                      </a>
+                  <h4><%= link_to conversations_path do %>
+                  <style="text-decoration:none;"><strong><p> <%= topic.user.name %></p></strong></a></h4>
+                  <small><small> <% end %>
+                  <style="text-decoration:none; color:grey;">
+                  <i><i class="fa fa-clock-o" aria-hidden="true"></i><%= topic.updated_at %></i></a></small></small></h4>
+
+                  <p><%= image_tag topic.image, class: "img-responsive" %></p>
+                  <%= link_to topic_path(topic) do %>
+                  <h4><strong><%= topic.title %></strong></h4>
+                  <% end %>
+
+                  <p><%= topic.content %></p>
+                  <% if topic.user == current_user %>
+
+                                                    <div class="button_wrapper">
+                                                      <button class='btn btn-dangar btn-xs'>
+                                                      <%= link_to "編集する", edit_topic_path(topic.id) %>
+                                                      </button>
+                                                      <button class='btn btn-dangar btn-xs'>
+                                                      <%= link_to "削除する", topic_path(topic.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %>
+                                                      </button>
+                                                    </div>
+                                                    <% end %>
+                                                    <hr>
+               <% end %>
+               <hr>
+             </div>
