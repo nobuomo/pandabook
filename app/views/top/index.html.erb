@@ -21,47 +21,45 @@
                 <div class="panel-body">
                       <div style="padding-top:50px;">
                         <div style="padding-left:auto;">
-                          <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+
                                   <div class="media">
                                        <div class="media-body">
                                          <h3><strong>Welcome</strong></h3>
                                            <h3><strong>
-                                            <div class="user-name">
-                                          <%= profile_img(current_user) %>
-                                        </div>
-                                                <strong><p><%= current_user.name %>　<br>さん！</p></strong></a>
+                                             <div class="img-responsive">
+                                              <%= profile_img(current_user) %>
                                             </div>
-                                          </strong>
- </div>
+                                                <strong><p><%= current_user.name %>　<br>さん！</p></strong></a>
+                                        </div>
+                                    </strong>
+                                </div>
 
-                                         <div class="pull-right">
+                                  <div class="pull-right">
                                              <h1 class="panel-title pull-right" style="font-size:30px;">  </h1>
                                               <%= link_to "トピックを投稿する", new_topic_path, class: 'btn btn-default' %>
-                                        </div>
-                                    </div>
-                                 </div>
+                                  </div>
                               </div>
-                            </div>
-                          </div>
+
                         </div>
+                      </div>
                     </div>
+                  </div>
+              </div>
 
 
     <div class="main">
-
-
-          　</div>
-
-
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="pull-left">
                       <a href="#">
                           <% @topics.each do |topic| %>
+                           <img class="media-object img-circle">   <%= profile_img(topic.user) %>
 
+
+                          <p><%= topic.user.name %></p>
                       </a>
                   <h4><%= link_to conversations_path do %>
-                    
+
                   <style="text-decoration:none;"></a></h4>
                   <small><small> <% end %>
                   <style="text-decoration:none; color:grey;">
@@ -88,3 +86,4 @@
                <% end %>
                <hr>
              </div>
+　</div>

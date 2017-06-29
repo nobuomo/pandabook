@@ -1,10 +1,11 @@
 
 10.times do |no|
-  Topic.create(:title => "title #{no}")
+  Topic.create(:title => "title #{no}", :user_id => 1)
+
 end
 
 10.times do |no|
-  Comment.create(:content => "panda #{no}")
+  Comment.create(:content => "panda #{no}", :user_id =>1)
 end
 
 
@@ -13,7 +14,7 @@ end
   password = "password"
   name = Faker::Name.name
   image_url =  Faker::Avatar.image
-  avatar=Faker::Avatar.image("my-own-slug", "50x50", "bmp")
+  avatar=Faker::Avatar.image("my-own-slug", "10x10", "bmp")
   uid ="uid123#{n}"
   provider = "pandabook#{n}"
   User.create!(email: email,
