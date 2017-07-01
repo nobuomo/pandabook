@@ -1,12 +1,26 @@
 <div class="container">
-  <h2>フォローしている人</h2>
-  <% @followers.each do |follower| %>
-      <div class="container-child col-md-2 col-sm-4 col-xs-6 ">
-        <%= profile_img(follower) %>
-        <%= follower.email %>
-        <%= follower.name %>
-        
-      </div>
-  <% end %>
+  <h2>フォローされている人</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>プロファイル</th>
+      <th>名前</th>
+      <th>email</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+      <% @followers.each do |follower| %>
+      <tr>
+        <td><%= profile_img(follower) %></td>
+        <td>  <%= follower.name %></td>
+        <td>  <%= follower.email %></td>
+
+
+      </tr>
+    <% end %>
+  </tbody>
   <%= link_to '戻る', users_path %>
-</div>
+</table>

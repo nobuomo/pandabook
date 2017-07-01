@@ -6,20 +6,31 @@
   <hr>
 </div>
 
-  <% @users.each do |user| %>
-      <% if user.id != current_user.id %>
-        <div class="container-child col-md-2 col-sm-4 col-xs-6 ">
-          <%= profile_img(user)%><br>
-          <%= user.name %><br>
-          <%= user.email %><br><br><br>
-        </div>
-        <div class="item">
-          <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post', class: "btn btn-large btn-primary", authenticity_token: true %>
-        </div>
-        <%= render partial: 'follow_form', locals: { user: user } if signed_in?   %>
-        <% end %>
 
-    </div>
 
-  <hr>
-<% end %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>プロファイル</th>
+      <th>名前</th>
+      <th>email</th>
+      <th>メッセージ</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+      <% @users.each do |user| %>
+          <% if user.id != current_user.id %>
+      <tr>
+        <td><%= profile_img(user) %></td>
+        <td>  <%= user.name %></td>
+        <td>  <%= user.email %></td>
+        <td>  <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post', class: "btn btn-large btn-primary", authenticity_token: true %></td>
+        <td>   <%= render partial: 'follow_form', locals: { user: user } if signed_in?   %></td>
+          <% end %>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
