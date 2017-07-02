@@ -4,7 +4,9 @@
 
 end
 
-
+10.times do |no|
+  Comment.create(:content => "panda #{no}", :user_id =>1, :topic_id => 1)
+end
 
 
 10.times do |n|
