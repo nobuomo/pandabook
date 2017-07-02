@@ -15,8 +15,8 @@ end
   name = Faker::Name.name
   image_url =  Faker::Avatar.image
   avatar=Faker::Avatar.image("my-own-slug", "10x10", "bmp")
-  uid ="uid123#{n}"
-  provider = "pandabook#{n}"
+  uid ="uid123r#{n}"
+  provider = "pandarbook#{n}"
   User.create!(email: email,
                password: password,
                password_confirmation: password,
