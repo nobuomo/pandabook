@@ -6,6 +6,15 @@
     min-height: 25%;
   }
 
+  .img{
+      display: block;
+      max-width: 25%;
+      max-height: 25%;
+      min-width: 25%;
+      min-height: 25%;
+    }
+
+
 
 /*
   =require twitter-bootstrap-static/bootstrap

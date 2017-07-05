@@ -2,7 +2,30 @@
 
 class AvatarUploader < CarrierWave::Uploader::Base
 
-  # Include RMagick or MiniMagick support:
+  # リサイズしたり画像形式を変更するのに必要
+  include CarrierWave::RMagick
+
+ # 画像の上限を200pxにする
+   process :resize_to_limit => [200, 200]
+
+  # 保存形式をJPGにする
+  process :convert => 'jpg'
+
+  # サムネイルを生成する設定
+   version :thumb do
+     process :resize_to_fill => [40, 40, gravity = ::Magick::CenterGravity]
+   end
+
+  # jpg,jpeg,gif,pngしか受け付けない
+  def extension_white_list
+    %w(jpg jpeg gif png)
+  end
+
+ # 拡張子が同じでないとGIFをJPGとかにコンバートできないので、ファイル名を変更
+  def filename
+    super.chomp(File.extname(super)) + '.jpg' if original_filename.present?
+  end
+# Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
@@ -28,8 +51,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
 
-  # Process files as they are uploaded:
-  # process :scale => [200, 300]
+  #Process files as they are uploaded:
+  #process resize_to_limit: [40, 40]
   #
   # def scale(width, height)
   #   # do something

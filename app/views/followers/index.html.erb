@@ -12,11 +12,11 @@
   </thead>
 
   <tbody>
-      <% @followers.each do |follower| %>
+      <% @followers.each do |user| %>
       <tr>
-        <td><%= profile_img(follower) %></td>
-        <td>  <%= follower.name %></td>
-        <td>  <%= follower.email %></td>
+        <td><%= profile_img(user) %></td>
+        <td>  <%= user.name %></td>
+        <td>  <%= user.email %></td>
 
 
       </tr>
