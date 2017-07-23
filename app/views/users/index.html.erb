@@ -1,36 +1,25 @@
-<%= javascript_include_tag "application" %>
-
-<div class="container">
-  <h2><strong><%= link_to "PANDABOOK", root_path %> ユーザー一覧</strong></h2＞
-  <br>
-  <hr>
-</div>
-
-
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>プロファイル</th>
-      <th>名前</th>
-      <th>email</th>
-      <th>メッセージ</th>
-    </tr>
-  </thead>
-
-  <tbody>
-
+<div class="col-xs-12 col-sm-8 col-md-8 col-md-offset-1">
+  <div class="user_panel">
+    <div class="panel panel-default">
+      <div class="panel-heading">ユーザー一覧</div>
       <% @users.each do |user| %>
-          <% if user.id != current_user.id %>
-      <tr>
-        <td><%= profile_img(user) %></td>
-        <td>  <%= user.name %></td>
-        <td>  <%= user.email %></td>
-        <td>  <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post', class: "btn btn-large btn-primary", authenticity_token: true %></td>
-        <td>   <%= render partial: 'follow_form', locals: { user: user } if signed_in?   %></td>
-          <% end %>
+        <li class="list-group-item">
+          <strong class="info_name"><%= profile_img(user) %> <%= link_to user.name, user_path(user) %></strong>
+          <div class="user-index-btn">
+            <tr>
+              <td>
+                <%= render partial: 'follow_form', locals: { user: user } %>
+              </td>
 
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+              <td>
+                <%= link_to conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post' do %>
+                  <i class="fa fa-commenting btn btn-primary" aria-hidden="true">メッセージ</i>
+                <% end %>
+              </td>
+            </tr>
+          </div>
+        </li>
+        <% end %>
+    </div>
+  </div>
+</div>

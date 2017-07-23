@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
   root 'top#index'
-  resources :users, only: [:index]
-  resources :relationships, only: [:create, :destroy]
+
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
@@ -10,6 +9,9 @@ Rails.application.routes.draw do
       registrations: "users/registrations",
       omniauth_callbacks: "users/omniauth_callbacks"
   }
+
+  resources :users, only: [:index, :show]
+  resources :relationships, only: [:create, :destroy]
 
   resources :followed_users, only: [:index]
   resources :followers, only: [:index]
