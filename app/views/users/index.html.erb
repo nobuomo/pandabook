@@ -1,37 +1,4 @@
 
-<div class="container">
-  <h2>ユーザー一覧</h2＞
-    <br><br><br>
-    <% @users.each do |user| %>
-    <% if user.id != current_user.id %>
-
-    <table class="table">
-        <thead>
-          <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-
-            <td> <%= profile_img(user) %></td>
-            <td> <%= link_to user.name, user_path(user) %></td>
-            <td> <%= user.email %></td>
-            <td> <%= render partial: 'follow_form', locals: { user: user } if signed_in? %></td>
-           </tr>
-        <% end %>
-      </tbody>
-    </table>
-
-  </div>
-  <hr>
-<% end %>
-
-
 <div class="col-xs-12 col-sm-8 col-md-8 col-md-offset-1">
   <div class="user_panel">
     <div class="panel panel-default">
@@ -45,7 +12,7 @@
                 <%= render partial: 'follow_form', locals: { user: user } %>
               </td>
 
-            
+
             </tr>
           </div>
         </li>
