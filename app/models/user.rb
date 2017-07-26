@@ -17,8 +17,6 @@ class User < ActiveRecord::Base
   has_many :followed_users, through: :relationships, source: :followed
   has_many :followers, through: :reverse_relationships, source: :follower
 
-   has_many :likes, dependent: :destroy
-
 
 
   def self.create_unique_string
@@ -85,32 +83,6 @@ class User < ActiveRecord::Base
   def unfollow!(other_user)
     relationships.find_by(followed_id: other_user.id).destroy
   end
-
-
-  def friend
-    followers & followed_users
-  end
-
-  def request_friend
-    followers - followed_users
-  end
-
-
-  def friend?(other_user)
-    self.followers.select{|user| user.id == other_user.id }.present? && self.followed_users.select{|user| user.id == other_user.id }.present?
-  end
-
-  def random_friend
-    not_friend = User.where.not(id: self.id).order("RANDOM()").limit(10) - (followers & followed_users)
-    not_friend.sample(3)
-  end
-
-
-
-
-
-
-
 
 
 end
