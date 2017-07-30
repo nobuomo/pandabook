@@ -1,5 +1,5 @@
 
-10.times do |no|
+ 10.times do |no|
   Topic.create(:title => "title #{no}", :user_id => 1, :content => "pan #{no}")
 
 end
@@ -13,16 +13,16 @@ end
   email = Faker::Internet.email
   password = "password"
   name = Faker::Name.name
-  # image_url =  Faker::Avatar.image
-  # avatar=Faker::Avatar.image("my-own-slug", "3x3", "bmp")
+  image_url =  Faker::Avatar.image
+  avatar=Faker::Avatar.image("my-own-slug", "3x3", "bmp")
   uid ="uid123r#{n}"
   provider = "pandarbook#{n}"
   User.create!(email: email,
                password: password,
                password_confirmation: password,
                name: name,
-              #  image_url: image_url,
-              #  avatar: avatar,
+               image_url: image_url,
+               avatar: avatar,
                uid: uid,
                provider: provider,
                )
