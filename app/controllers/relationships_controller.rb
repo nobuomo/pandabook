@@ -2,13 +2,16 @@
 
 class RelationshipsController < ApplicationController
     before_action :authenticate_user!
-    # respond_to :js
+  #  respond_to :json
 
   def create
       @user = User.find(params[:relationship][:followed_id])
       current_user.follow!(@user)
-      binding.pry
       respond_with @user
+      respond_to do |format|
+        format.html
+        format.json { render json: @user }
+      end
       # redirect_with root_path
   end
 
@@ -16,17 +19,21 @@ class RelationshipsController < ApplicationController
     @user = Relationship.find(params[:id]).followed
     current_user.unfollow!(@user)
     respond_with @user
+    respond_to do |format|
+      format.html
+      format.json { render json: @user }
+    end
     # redirect_with root_path
   end
 
-def followed_users
-@user = User.find(params[:relationship][:followed_id])
+  def followed_users
+  @user = User.find(params[:relationship][:followed_id])
 
-end
+  end
 
-def followers
-@user = User.find(params[:relationship][:follow_id])
-end
+  def followers
+  @user = User.find(params[:relationship][:follow_id])
+  end
 
 
 end
