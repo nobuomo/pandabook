@@ -8,12 +8,14 @@ class RelationshipsController < ApplicationController
       @user = User.find(params[:relationship][:followed_id])
       current_user.follow!(@user)
       respond_with @user
+      redirect_to root_path
   end
 
   def destroy
     @user = Relationship.find(params[:id]).followed
     current_user.unfollow!(@user)
     respond_with @user
+    redirect_to root_path
   end
 
 def followed_users
