@@ -2,20 +2,21 @@
 
 class RelationshipsController < ApplicationController
     before_action :authenticate_user!
-    respond_to :js
+    # respond_to :js
 
   def create
       @user = User.find(params[:relationship][:followed_id])
       current_user.follow!(@user)
+      binding.pry
       respond_with @user
-      redirect_to root_path
+      # redirect_with root_path
   end
 
   def destroy
     @user = Relationship.find(params[:id]).followed
     current_user.unfollow!(@user)
     respond_with @user
-    redirect_to root_path
+    # redirect_with root_path
   end
 
 def followed_users
