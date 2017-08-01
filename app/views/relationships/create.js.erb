@@ -1,1 +1,7 @@
 $("#follow_form_"+"<%= @user.id %>").html("<%= escape_javascript(render partial: 'users/follow_form', locals: { user: @user } ) %>")
+
+
+// type: 'POST',
+// contentType: "application/json",
+// url: 'http://localhost:3000/relationships',
+// dataType: "json"

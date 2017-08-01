@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :relationships, only: [:create, :destroy]
 
-  resources :followed_users, only: [:index]
-  resources :followers, only: [:index]
+  # resources :followed_users, only: [:index]
+  # resources :followers, only: [:index]
 
   resources :topics, only: [:index, :new, :create, :edit, :show, :update, :destroy] do
     collection do
