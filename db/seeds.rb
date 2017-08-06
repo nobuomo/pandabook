@@ -1,6 +1,4 @@
 
-
-
 10.times do |n|
   email = Faker::Internet.email
   password = "password"
@@ -16,13 +14,12 @@
                uid: uid,
                provider: provider,
                )
+end
 
-    10.times do |no|
-      Topic.create(:title => "title #{no}", :user_id => 17, :content => "pan #{no}")
+10.times do |no|
+  Topic.create(:title => "title #{no}", :user_id => 17, :content => "pan #{no}")
+end
 
-    end
-
-    10.times do |no|
-      Comment.create(:content => "panda #{no}", :user_id =>17, :topic_id => 94)
-    end
-# end
+10.times do |no|
+  Comment.create(:content => "panda #{no}", :user_id =>17, :topic_id => 94)
+end
